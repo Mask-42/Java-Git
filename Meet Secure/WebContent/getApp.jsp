@@ -239,7 +239,7 @@ label {
 <br>
 
 <div class="col-md-6 col-md-offset-3">
-   <div class="panel panel-login"><button style="padding-right:20px;padding-top: 20px; " class="close" data-dismiss="panel">&times;</button>
+   <div class="panel panel-login"><button style="padding-right:20px;padding-top: 20px; " class="close"><a href="index.jsp">&times;</a></button>
 			
         <div class="panel-body">    
           <div class="row">

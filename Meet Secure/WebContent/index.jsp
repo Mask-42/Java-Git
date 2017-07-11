@@ -71,7 +71,7 @@
               <!--  <li><a href="#works">Works</a></li>	-->
               
               <li><a href="#contact">Contact</a></li>
-              <li><a href="login.jsp" >Login</a></li>
+              <li><a href="Login.jsp" >Login</a></li>
             </ul>
           </div>
           <!-- /.Navbar-collapse --> 
@@ -149,7 +149,7 @@
                 <h5>Get an Appointment</h5>
                 <div class="divider-header"></div>
                 <p style="color:#FFF;"> Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo. </p>
-                <a href="#" class="btn btn-skin">Learn more</a> </div>
+                <a href="getApp.jsp" class="btn btn-skin">Get Appointment</a> </div>
             </div>
           </div>
         </div>
