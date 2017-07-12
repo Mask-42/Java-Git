@@ -1,8 +1,5 @@
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -28,10 +25,9 @@ public class QrCodeServlet extends HttpServlet {
 
 		String qrtext = request.getParameter("qrtext");
 
-		ByteArrayOutputStream out = QRCode.from(qrtext).to(
-				ImageType.PNG).stream();
+		ByteArrayOutputStream out = QRCode.from(qrtext).withSize(250,250).to(ImageType.JPG).stream();
 		
-		response.setContentType("image/png");
+		response.setContentType("image/jpg");
 		response.setContentLength(out.size());
 		
 		OutputStream outStream = response.getOutputStream();
@@ -42,11 +38,9 @@ public class QrCodeServlet extends HttpServlet {
 		outStream.close();
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

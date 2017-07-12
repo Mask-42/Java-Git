@@ -7,7 +7,7 @@
 </head>
 <body>
 	
-	<form action="QrCodeServlet" method="get">
+	<form action="QrCodeServlet" method="post">
 		<p>Enter Text to create QR Code</p>
 		<input type="text" name="qrtext" />
 		<input type="submit" value="Generate QR Code" />
