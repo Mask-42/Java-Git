@@ -3,7 +3,11 @@ import com.opensymphony.xwork2.ActionSupport;
 
 //public class LoginAction implements Action{
 public class ActionClass extends ActionSupport {// extend action support to send
-												// error
+												/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	// error
 	String name, pass;
 
 	public String getName() {
