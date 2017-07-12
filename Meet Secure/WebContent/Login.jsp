@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="/struts-tags" prefix="s" %>
+	<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-
+<sb:head/>
 </head>
 <style>
 body {
@@ -35,16 +37,24 @@ body {
 50%
 {
 background-position
+
+
 :
+
  
+
 100%
 0;
 }
 100%
 {
 background-position
+
+
 :
+
  
+
 0
 0;
 }
@@ -57,16 +67,24 @@ keyframes HeroBG { 0% {
 50%
 {
 background-position
+
+
 :
+
  
+
 100%
 0;
 }
 100%
 {
 background-position
+
+
 :
+
  
+
 0
 0;
 }
@@ -269,13 +287,16 @@ label {
 	<div style="padding-top: 100px;" class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="panel panel-login">
-			<div class="panel-header">
-			<button style="padding-right:30px;padding-top: 30px; " class="close"><a href="index.jsp"> &times; </a></button>
-			</div>
+				<div class="panel-header">
+					<button style="padding-right: 30px; padding-top: 30px;"
+						class="close">
+						<a href="index.jsp"> &times; </a>
+					</button>
+				</div>
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<form id="login-form" action="#" method="post" role="form"
+							<!-- <form id="login-form" action="#" method="post" role="form"
 								style="display: block;">
 								<h2>
 									<center>
@@ -302,8 +323,19 @@ label {
 										tabindex="4" class="form-control btn btn-success"
 										value="LogIn">
 								</div>
-							</form>
+							</form>-->
 
+
+							<s:form action="home" theme="bootstrap"
+								cssClass="well form-search">
+								<s:textfield label="Username" name="name"
+									tooltip="Enter your Name here" />
+
+								<s:password placeholder="Password" label="Password" name="pass"
+									type="password" />
+
+								<s:submit value="Login" cssClass="btn btn-primary" />
+								</s:form>
 						</div>
 					</div>
 				</div>

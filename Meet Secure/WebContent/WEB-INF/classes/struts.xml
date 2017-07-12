@@ -7,7 +7,19 @@
 		<struts>
 <constant name="struts.custom.i18n.resources" value="resources.ApplicationResources"></constant>
     <package name="default"  extends="struts-default">
+  <action name="Login">
 
+            <result>/Index.jsp</result>
+
+        </action>
+
+        <action name="home" class="ActionClass">
+
+            <result name="SUCCESS">/index.jsp</result>
+
+            <result name="ERROR">/Error.jsp</result>
+
+        </action>
        
 
     </package>
