@@ -41,7 +41,7 @@
         
         var rootRef = firebase.database().ref().child("User");
 
-        rootRef.on("child_added",snap =>{    
+        rootRef.on("child_added",snap => {    
             var name=snap.child("Name").val();
             var email=snap.child("Email").val();
             var college=snap.child("College").val();

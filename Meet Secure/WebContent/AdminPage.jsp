@@ -7,6 +7,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
+			authDomain : "meet-secure.firebaseapp.com",
+			databaseURL : "https://meet-secure.firebaseio.com",
+			projectId : "meet-secure",
+			storageBucket : "meet-secure.appspot.com",
+			messagingSenderId : "856844766175"
+		};
+		firebase.initializeApp(config);
+	</script>
 <sb:head />
 </head>
 
@@ -270,15 +283,9 @@ label {
 	color: blue;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <link rel="stylesheet" href="btstrap/css/bootstrap.min.css">
-<script src="js/jquery.min.js">
-	
-</script>
-
-<script src="js/bootstrap.min.js">
-	
-</script>
-
+<script src="js/bootstrap.min.js"></script>
 
 <body>
 	<div class="container-fluid">
@@ -356,7 +363,7 @@ label {
 									</h1>
 									</center>
 									<s:form action="adduser" id="login-form" method="post"
-										theme="bootstrap" cssClass="form-search" >
+										theme="bootstrap" cssClass="form-search" onsubmit="send()">
 <center>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-user"></span>
@@ -429,53 +436,29 @@ label {
 
 		<br> <br> <br>
 	</div>
-
-
-	
-	
-<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+		
 	<script>
-		// Initialize Firebase
-		var config = {
-			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
-			authDomain : "meet-secure.firebaseapp.com",
-			databaseURL : "https://meet-secure.firebaseio.com",
-			projectId : "meet-secure",
-			storageBucket : "meet-secure.appspot.com",
-			messagingSenderId : "856844766175"
-		};
-		firebase.initializeApp(config);
-	</script>
-	
-	
-	
-	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-	<script type="text/javascript">
-	
-	 $('#add-request').on('click',function(){
+	var userRef = firebase.database().ref().child("Users/");
+	$(document).ready(function(){
+	 $('#add-request').on("click",function(e){
+		var name=$('#name').val();
+		 var email=$('#email').val();
+		  var password=$('#password').val();
+		 var address=$('#address').val();
+		var username=$('#username').val();
+		 var phone=$('#phone').val();
 		 
-		/*var name=document.getElementById("name");
-		 var email=document.getElementById("email");
-		  var password=document.getElementById("password");
-		 var address=document.getElementById("address");
-		var username=document.getElementById("username");
-		 var phone=document.getElementById("phone");*/
-		 
-		 var userRef = firebase.database().ref().child("Users/");
-	
-			 
-		
-		
 		userRef.push({
-		Name: document.getElementById("name"),
-		Email: document.getElementById("email")		
-		
-		});
-		}
-		
-		});
-	</script>
-
-	
+			"Name":name,
+			"Email":email,
+			"Password":password,
+			"Address": address,
+			"Username": username,
+			"Contact":phone
+			});
+		return true;
+	 });
+	});
+	</script>	
 	</body>
 </html>
