@@ -21,7 +21,10 @@
             <result name="ERROR">/Error.jsp</result>
 
         </action>
-       
+    <action name="" class="getApp">
+    <result name="Success">/index.jsp </result>
+    
+    </action>   
 
     </package>
 
