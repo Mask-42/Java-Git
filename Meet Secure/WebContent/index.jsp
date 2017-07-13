@@ -134,10 +134,10 @@
             <div class="service-box">
               <div class="service-icon"> <span class="fa fa-file-text-o fa-2x"></span> </div>
               <div class="service-desc">
-                <h5>List of Employees</h5>
+                <h5>List of Manager</h5>
                 <div class="divider-header"></div>
                 <p style="color:#FFF;"> Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo. </p>
-              <a href="#" class="btn btn-skin">Learn more</a> </div>
+              <a href="ListOfManagers.jsp" class="btn btn-skin">Learn more</a> </div>
             </div>
           </div>
         </div>
