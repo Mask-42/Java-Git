@@ -25,7 +25,8 @@
     <result name="Success">/index.jsp </result>
     
     </action>   
-
+<action name="adduser" class="AddUser">
+<result name="Success">/AdminPage.jsp</result></action>
     </package>
 
 </struts>

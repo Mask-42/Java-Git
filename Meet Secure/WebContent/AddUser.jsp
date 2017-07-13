@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -247,48 +249,48 @@ label {
             <div class="col-lg-12">
         
 <h1> <center><span class="glyphicon glyphicon-edit "></span> Add a User</h1></center>
+<s:form action="adduser" id="login-form" method="post" theme="bootstrap"
+									cssClass="form-search">
 
-<form id="login-form" method="post">
-<div class="form-group"  >
+<div class="form-group form-inline"  >
 <span class="glyphicon glyphicon-user"></span> <br>
-<input type="text" name="name" placeholder="Name"    class="form-control" value="">
-
+<s:textfield type="text" name="name" placeholder="Name"    class="form-control" value="">
+</s:textfield>
 </div>
-<div class="form-group">
+<div class="form-group form-inline">
 <span class="glyphicon glyphicon-phone"></span> <br>
-<input type="text" name="phone" value=""  class="form-control" placeholder="Contact No." >
+<s:textfield type="text" name="phone" value=""  class="form-control" placeholder="Contact No." >
+</s:textfield>
 </div>
-<div class="form-group">
+<div class="form-group form-inline">
 <span class="glyphicon glyphicon-home"></span><br>
-<input type="text" name="address" value=""  class="form-control" placeholder="Address" >
+<s:textfield type="text" name="address" value=""  class="form-control" placeholder="Address" >
+</s:textfield>
 </div>
-<div class="form-group">
+<div class="form-group form-inline">
 <span class="glyphicon glyphicon-envelope"></span> <br>
-<input type="email" name="email" value=""  class="form-control" placeholder="E-mail Id" >
+<s:textfield type="email" name="email" value=""  class="form-control" placeholder="E-mail Id" >
+</s:textfield>
 </div>
-<div class="form-group">
+<div class="form-group form-inline">
 <span class="glyphicon glyphicon-list-alt"></span> <br>
-<input type="text" name="username" value=""  class="form-control" placeholder="Username" >
+<s:textfield type="text" name="username" value=""  class="form-control" placeholder="Username" >
+</s:textfield>
 </div>
-<div class="form-group">
+<div class="form-group form-inline">
 <span class="glyphicon glyphicon-lock"></span> <br>
-<input type="password" name="password" value=""  class="form-control" placeholder="Password" >
+<s:password type="password" name="password" value=""  class="form-control" placeholder="Password" >
+</s:password>
 </div>
-<div class="form-group"> <span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span><br><br>
-<select class="form-control" id="category1" name="category1" required="">
-                                                    <option value="category1"> Role</option>
-													<option value="category1">Manager</option>
-													<option value="category1">Security Guard</option>
-													<option value="category1">Admin</option>
-													<option value="category1">Others</option>
-													
-												</select>
+<div class="form-group form-inline"> <span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span><br><br>
+<s:select theme="bootstrap" class="form-control" id="category1" headerKey="-1" name="category1" list="#{'1':'Manager','2':'Security Guard', '3':'Admin' }">
+                                                   </s:select>
 </div>
 <br>
   <div class="col-s-5 form-group pull-right">     
-                        <input type="submit" name="add" id="add-request"  class="form-control btn btn-success btn btn-request" value="Add User">
-                  </div>
-</form>
+                        <s:submit type="submit" name="add" id="add-request"  class="form-control btn btn-success btn btn-request" value="Add User">
+               </s:submit>   </div>
+</s:form>
 
 </div>
 </div>
