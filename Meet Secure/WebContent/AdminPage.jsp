@@ -278,6 +278,24 @@ label {
 <script src="js/bootstrap.min.js">
 	
 </script>
+<script type="text/javascript">
+	var name,address,phone,email,username,password,role;
+	
+	  function auth()
+	 {
+		 
+		
+		// pattern=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,16}$/;
+		 name=document.getElementByName("name");
+		 email=document.getElementByName("email");
+		 password=document.getElementByName("password");
+		 address=document.getElementByName("address");
+		username=document.getElementByName("username");
+		 role=document.getElementByName("role");
+		 phone=document.getElementByName("phone");
+	 }
+	  </script>
+	 
 <body>
 	<div class="container-fluid">
 		<div class="row">
@@ -354,23 +372,23 @@ label {
 									</h1>
 									</center>
 									<s:form action="adduser" id="login-form" method="post"
-										theme="bootstrap" cssClass="form-search">
+										theme="bootstrap" cssClass="form-search" onsubmit="return auth()">
 <center>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-user"></span>
-											<s:textfield type="text" name="name" placeholder="Name"
+											<s:textfield type="text"  name="name" placeholder="Name"
 												class="form-control" value="">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-phone"></span>
-											<s:textfield type="text" name="phone" value=""
+											<s:textfield type="text"  name="phone" value=""
 												class="form-control" placeholder="Contact No.">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-home"></span>
-											<s:textfield type="text" name="address" value=""
+											<s:textfield type="text"  name="address" value=""
 												class="form-control" placeholder="Address">
 											</s:textfield>
 										</div>
@@ -388,7 +406,7 @@ label {
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-lock"></span> 
-											<s:password type="password" name="password" value=""
+											<s:password type="password"  name="password" value=""
 												class="form-control" placeholder="Password">
 											</s:password>
 										</div>
@@ -396,7 +414,7 @@ label {
 											<span class="glyphicon glyphicon-user"></span><span
 												class="glyphicon glyphicon-user"></span><span
 												class="glyphicon glyphicon-user"></span>											<s:select theme="bootstrap" class="form-control"
-												id="category1" headerKey="-1" name="category1"
+												id="category1" headerKey="-1"  name="category1"
 												list="#{'1':'Manager','2':'Security Guard', '3':'Admin' }">
 											</s:select>
 										</div>
@@ -427,5 +445,40 @@ label {
 
 		<br> <br> <br>
 	</div>
-</body>
+
+
+	
+	
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
+			authDomain : "meet-secure.firebaseapp.com",
+			databaseURL : "https://meet-secure.firebaseio.com",
+			projectId : "meet-secure",
+			storageBucket : "meet-secure.appspot.com",
+			messagingSenderId : "856844766175"
+		};
+		firebase.initializeApp(config);
+	</script>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script type="text/javascript">
+		var userRef = firebase.database().ref().child("Users/");
+		alert(userRef);
+		userRef.push({
+			Name : 'Rohit Manhas',
+			Address:'Pathankot',
+			Contact:'7002354869',
+			Email:'manhas_rohit@gmail.com',
+			Purpose:'Taking Money',
+			ManagerName:'Manpreet Shuann',
+			Time:'13:15',
+			Key:'-Komv8-7-SvKzrV6YUhq895',
+			Date:'5/8/2017'
+		});
+	</script>
+	</body>
 </html>

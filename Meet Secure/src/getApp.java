@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 public class getApp extends ActionSupport {
  
- private String manager ,name,phone,address,email,purpose;
+ /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+private String manager ,name,phone,address,email,purpose;
  
 
  public String  getyourmanager() {

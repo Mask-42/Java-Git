@@ -10,6 +10,7 @@
 <sb:head/>
 </head>
 
+	
 <style>
 
 
@@ -310,5 +311,53 @@ label {
 <br>
 <br>
 <br>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
+			authDomain : "meet-secure.firebaseapp.com",
+			databaseURL : "https://meet-secure.firebaseio.com",
+			projectId : "meet-secure",
+			storageBucket : "meet-secure.appspot.com",
+			messagingSenderId : "856844766175"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script type="text/javascript" lang="javascript">
+
+	var name,address,phone,email,username,password,role;
+	
+  function auth()
+ {
+	 
+	
+	// pattern=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,16}$/;
+	 name=document.getElementByName("name");
+	 email=document.getElementByName("email");
+	 password=document.getElementByName("password");
+	 address=document.getElementByName("address");
+	username=document.getElementByName("username");
+	 role=document.getElementByName("role");
+	 phone=document.getElementByName("phone");
+ }
+	 
+	
+	
+		var userRef = firebase.database().ref().child("Users/");
+		alert(userRef);
+		userRef.push({
+			Name : name,
+			Address:address,
+			Contact:phone,
+			Email:email,
+		  Username:username,
+		  Password:password,
+		  Role:role
+			
+			
+		});
+	</script>
 </body>
 </html>
