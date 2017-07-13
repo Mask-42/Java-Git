@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-	<script>
+<script>
 		// Initialize Firebase
 		var config = {
 			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
@@ -53,9 +53,17 @@ body {
 background-position
 
 
+
+
+
+
 :
 
+
+
  
+
+
 
 100%
 0;
@@ -65,9 +73,17 @@ background-position
 background-position
 
 
+
+
+
+
 :
 
+
+
  
+
+
 
 0
 0;
@@ -83,9 +99,17 @@ keyframes HeroBG { 0% {
 background-position
 
 
+
+
+
+
 :
 
+
+
  
+
+
 
 100%
 0;
@@ -95,9 +119,17 @@ background-position
 background-position
 
 
+
+
+
+
 :
 
+
+
  
+
+
 
 0
 0;
@@ -363,52 +395,54 @@ label {
 									</h1>
 									</center>
 									<s:form action="adduser" id="login-form" method="post"
-										theme="bootstrap" cssClass="form-search" onsubmit="send()">
-<center>
-										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-user"></span>
-											<s:textfield type="text"  name="name" placeholder="Name"
-												class="form-control"  id="name" value="">
-											</s:textfield>
-										</div>
-										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-phone"></span>
-											<s:textfield type="text"  name="phone" value=""
-												class="form-control"  id="phone" placeholder="Contact No.">
-											</s:textfield>
-										</div>
-										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-home"></span>
-											<s:textfield type="text"  name="address" value=""
-												class="form-control" id="address" placeholder="Address">
-											</s:textfield>
-										</div>
-										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-envelope"></span>
-											<s:textfield type="email" name="email" id="email" value=""
-												class="form-control" placeholder="E-mail Id">
-											</s:textfield>
-										</div>
-										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-list-alt"></span>
-											<s:textfield type="text" name="username" value=""
-												class="form-control" placeholder="Username" id="username">
-											</s:textfield>
-										</div>
-										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-lock"></span> 
-											<s:password type="password"  name="password" value=""
-												class="form-control" placeholder="Password" id="password">
-											</s:password>
-										</div>
-										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-user"></span><span
-												class="glyphicon glyphicon-user"></span><span
-												class="glyphicon glyphicon-user"></span>											<s:select theme="bootstrap" class="form-control"
-												id="category1" headerKey="-1"  name="category1"
-												list="#{'1':'Manager','2':'Security Guard', '3':'Admin' }">
-											</s:select>
-										</div>
+										theme="bootstrap" cssClass="form-search">
+										<center>
+											<div class="form-group form-inline">
+												<span class="glyphicon glyphicon-user"></span>
+												<s:textfield type="text" name="name" placeholder="Name"
+													class="form-control" id="name" value="">
+												</s:textfield>
+											</div>
+											<div class="form-group form-inline">
+												<span class="glyphicon glyphicon-phone"></span>
+												<s:textfield type="text" name="phone" value=""
+													class="form-control" id="phone" placeholder="Contact No.">
+												</s:textfield>
+											</div>
+											<div class="form-group form-inline">
+												<span class="glyphicon glyphicon-home"></span>
+												<s:textfield type="text" name="address" value=""
+													class="form-control" id="address" placeholder="Address">
+												</s:textfield>
+											</div>
+											<div class="form-group form-inline">
+												<span class="glyphicon glyphicon-envelope"></span>
+												<s:textfield type="email" name="email" id="email" value=""
+													class="form-control" placeholder="E-mail Id">
+												</s:textfield>
+											</div>
+											<div class="form-group form-inline">
+												<span class="glyphicon glyphicon-list-alt"></span>
+												<s:textfield type="text" name="username" value=""
+													class="form-control" placeholder="Username" id="username">
+												</s:textfield>
+											</div>
+											<div class="form-group form-inline">
+												<span class="glyphicon glyphicon-lock"></span>
+												<s:password type="password" name="password" value=""
+													class="form-control" placeholder="Password" id="password">
+												</s:password>
+											</div>
+											<div class="form-group form-inline">
+												<span class="glyphicon glyphicon-user"></span><span
+													class="glyphicon glyphicon-user"></span><span
+													class="glyphicon glyphicon-user"></span>
+											<s:select theme="bootstrap" class="form-control"
+													id="category1" headerValue="Select Type of users" headerKey="-1" name="category1"
+													list="#{'Manager':'Manager','Security Guard':'Security Guard', 'Admin':'Admin' }" >
+												</s:select>
+												
+											</div>
 										</center>
 										<br>
 										<div class="col-s-5 form-group pull-right">
@@ -436,7 +470,7 @@ label {
 
 		<br> <br> <br>
 	</div>
-		
+
 	<script>
 	var userRef = firebase.database().ref().child("Users/");
 	$(document).ready(function(){
@@ -447,18 +481,19 @@ label {
 		 var address=$('#address').val();
 		var username=$('#username').val();
 		 var phone=$('#phone').val();
-		 
+		 var role=$('#category1').val();
 		userRef.push({
 			"Name":name,
 			"Email":email,
 			"Password":password,
 			"Address": address,
 			"Username": username,
-			"Contact":phone
+			"Contact":phone,
+			"Role": role
 			});
 		return true;
 	 });
 	});
-	</script>	
-	</body>
+	</script>
+</body>
 </html>
