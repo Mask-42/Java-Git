@@ -51,24 +51,6 @@ body{
     background-position: 0 0;
   }
 }
-.container-sub {
-background-color:white;
-height:10px;
-   border: none;
-  -webkit-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
-  -moz-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
-  box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
-  padding: 10px;
-  }
-  .container-subb {background-color:white;
-height:400px;
-   border: none;
-  -webkit-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
-  -moz-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
-  box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
-  
-	
-}
 
 
 .navbar-default {
