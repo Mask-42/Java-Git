@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="/struts-tags" prefix="s"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<sb:head/>
+<sb:head />
 </head>
 
 <style>
@@ -38,16 +38,24 @@ body {
 50%
 {
 background-position
+
+
 :
+
  
+
 100%
 0;
 }
 100%
 {
 background-position
+
+
 :
+
  
+
 0
 0;
 }
@@ -60,16 +68,24 @@ keyframes HeroBG { 0% {
 50%
 {
 background-position
+
+
 :
+
  
+
 100%
 0;
 }
 100%
 {
 background-position
+
+
 :
+
  
+
 0
 0;
 }
@@ -339,39 +355,39 @@ label {
 									</center>
 									<s:form action="adduser" id="login-form" method="post"
 										theme="bootstrap" cssClass="form-search">
-
+<center>
 										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-user"></span> <br>
+											<span class="glyphicon glyphicon-user"></span>
 											<s:textfield type="text" name="name" placeholder="Name"
 												class="form-control" value="">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-phone"></span> <br>
+											<span class="glyphicon glyphicon-phone"></span>
 											<s:textfield type="text" name="phone" value=""
 												class="form-control" placeholder="Contact No.">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-home"></span><br>
+											<span class="glyphicon glyphicon-home"></span>
 											<s:textfield type="text" name="address" value=""
 												class="form-control" placeholder="Address">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-envelope"></span> <br>
+											<span class="glyphicon glyphicon-envelope"></span>
 											<s:textfield type="email" name="email" value=""
 												class="form-control" placeholder="E-mail Id">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-list-alt"></span> <br>
+											<span class="glyphicon glyphicon-list-alt"></span>
 											<s:textfield type="text" name="username" value=""
 												class="form-control" placeholder="Username">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
-											<span class="glyphicon glyphicon-lock"></span> <br>
+											<span class="glyphicon glyphicon-lock"></span> 
 											<s:password type="password" name="password" value=""
 												class="form-control" placeholder="Password">
 											</s:password>
@@ -379,13 +395,12 @@ label {
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-user"></span><span
 												class="glyphicon glyphicon-user"></span><span
-												class="glyphicon glyphicon-user"></span><br>
-											<br>
-											<s:select theme="bootstrap" class="form-control"
+												class="glyphicon glyphicon-user"></span>											<s:select theme="bootstrap" class="form-control"
 												id="category1" headerKey="-1" name="category1"
 												list="#{'1':'Manager','2':'Security Guard', '3':'Admin' }">
 											</s:select>
 										</div>
+										</center>
 										<br>
 										<div class="col-s-5 form-group pull-right">
 											<s:submit type="submit" name="add" id="add-request"
