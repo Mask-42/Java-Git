@@ -29,7 +29,7 @@ public class ActionClass extends ActionSupport {// extend action support to send
 	@Override
 	public String execute() throws Exception {
 
-		if (validateString(getName()) && validateString(getPass())) {
+		/*if (validateString(getName()) && validateString(getPass())) {
 			if (getName().equals("Manu") && getPass().equals("Manu1234")) {
 				return "SUCCESS";
 			}
@@ -45,17 +45,18 @@ public class ActionClass extends ActionSupport {// extend action support to send
 			addActionError(getText("errors.name.empty"));
 			addActionError(getText("errors.pass.empty"));
 			return "ERROR";
-		}
+		}*/
+		return "SUCCESS";
 
 	}
 
-	private boolean validateString(String str) {
+/*	private boolean validateString(String str) {
 
 		if (str != null && !str.equals(""))
 
 			return true;
 
 		return false;
-	}
+	}*/
 
 }

@@ -16,15 +16,16 @@
 
         <action name="home" class="ActionClass">
 
-            <result name="SUCCESS">/index.jsp</result>
+            <result name="SUCCESS">/Login.jsp</result>
 
             <result name="ERROR">/Error.jsp</result>
 
         </action>
-   <!-- <action name="" class="getApp">
+        
+   <action name="getApp" class="getApp">
     <result name="Success">/index.jsp </result>
     
-    </action> -->  
+    </action> 
 <action name="adduser" class="AddUser">
 <result name="Success">/AdminPage.jsp</result></action>
     </package>

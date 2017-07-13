@@ -13,7 +13,8 @@
                 <tr>
                     <td>Name</td>
                     <td>Email</td>
-                    <td>College</td>
+                    <td>Contacts</td>
+                    
                 </tr>
             </thead>      
             <tbody id="My_Table">
@@ -22,30 +23,33 @@
         </table>
 
 
-        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyB2hXw6X0XRaZuQieeAC5Fcd5G4IDyaiDc",
-                authDomain: "fir-try-ad905.firebaseapp.com",
-                databaseURL: "https://fir-try-ad905.firebaseio.com",
-                projectId: "fir-try-ad905",
-                storageBucket: "fir-try-ad905.appspot.com",
-                messagingSenderId: "263588420174"
-            };
-            firebase.initializeApp(config);
-        </script>
+     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+		// Initialize Firebase
+		var config = {
+			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
+			authDomain : "meet-secure.firebaseapp.com",
+			databaseURL : "https://meet-secure.firebaseio.com",
+			projectId : "meet-secure",
+			storageBucket : "meet-secure.appspot.com",
+			messagingSenderId : "856844766175"
+		};
+		firebase.initializeApp(config);
+	</script>
 
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script> 
         
-        var rootRef = firebase.database().ref().child("User");
+        var rootRef = firebase.database().ref().child("Users/");
+        rootRef.orderByChild('Role').equalTo("Manager").on('child_added', function (snapshot) {
 
-        rootRef.on("child_added",snap => {    
-            var name=snap.child("Name").val();
-            var email=snap.child("Email").val();
-            var college=snap.child("College").val();
-            $("#My_Table").append("<tr> <td>"+ name + " </td> <td> "+ email +" </td> <td> "+ college+" </td> </tr>");
+        		
+            var name=snapshot.child("Name").val();
+            var email=snapshot.child("Email").val();
+            var contacts=snapshot.child("Contact").val();
+        	
+        
+            $("#My_Table").append("<tr> <td>"+ name + " </td> <td> "+ email +"  </td> <td> "+ contacts +" </td> </tr>");
         });
         </script>
     </body>

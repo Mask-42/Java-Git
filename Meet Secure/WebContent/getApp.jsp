@@ -8,6 +8,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+		// Initialize Firebase
+		var config = {
+			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
+			authDomain : "meet-secure.firebaseapp.com",
+			databaseURL : "https://meet-secure.firebaseio.com",
+			projectId : "meet-secure",
+			storageBucket : "meet-secure.appspot.com",
+			messagingSenderId : "856844766175"
+		};
+		firebase.initializeApp(config);
+	</script>
 <sb:head />
 </head>
 
@@ -158,38 +171,38 @@ height:30px ;}
 								</h1>
 								</center>
 
-								<s:form action="success" method="post" theme="bootstrap"
+								<s:form action="getApp" method="post" theme="bootstrap"
 									cssClass="form-search">
 									<center>
 									<div class="form-group form-inline">
 										<span class="glyphicon glyphicon-user"></span>
-										<s:textfield type="text" name="name" placeholder="Name"
+										<s:textfield type="text" name="name" id="name" placeholder="Name"
 											class="form-control" value="">
 
 										</s:textfield>
 									</div>
 									<div class="form-group form-inline">
 										<span class="glyphicon glyphicon-phone"></span>
-										<s:textfield type="text" name="phone" value=""
+										<s:textfield type="text" name="phone" id="phone" value=""
 											class="form-control" placeholder="Contact No.">
 										</s:textfield>
 									</div>
 
 									<div class="form-group form-inline">
 										<span class="glyphicon glyphicon-home"></span>
-										<s:textfield type="text" name="address" value=""
+										<s:textfield type="text" name="address" id="address" value=""
 											class="form-control" placeholder="Address">
 										</s:textfield>
 									</div>
 									<div class="form-group form-inline">
 										<span class="glyphicon glyphicon-envelope"></span>
-										<s:textfield type="email" name="email" value=""
+										<s:textfield type="email" name="email" id="email" value=""
 											class="form-control" placeholder="E-mail Id">
 										</s:textfield>
 									</div>
 									<div class="form-group form-inline">
 										<span class="glyphicon glyphicon-list-alt"></span>
-										<s:textfield type="text" name="purpose" value=""
+										<s:textfield type="text" name="purpose" value="" id="purpose"
 											class="form-control" placeholder="Purpose">
 										</s:textfield>
 									</div>
@@ -202,7 +215,7 @@ height:30px ;}
 										
 										<s:select class="form-control" id="category1" headerKey="-1"
 											headerValue="Whom you want to meet??"
-											list="#{'1':'manager1','2':'manager2' }" name="manager">
+											list="#{'1':'manager1','2':'manager2' }"  name="manager">
 										</s:select>
 									</div>
 									<br>
@@ -232,5 +245,28 @@ height:30px ;}
 	<br>
 	<br>
 	<br>
+	
+		<script>
+	var userRef = firebase.database().ref().child("PendingAppointments/");
+	$(document).ready(function(){
+	 $('#login-request').on("click",function(e){
+		var name=$('#name').val();
+		 var email=$('#email').val();
+		 var address=$('#address').val();
+		 var phone=$('#phone').val();
+		 var purpose=$('#purpose').val();
+		 var manager=$('#category1').val();
+		userRef.push({
+			"Name":name,
+			"Email":email,
+			"Address": address,
+			"Contact":phone,
+			"Purpose": purpose,
+			"Manager": manager
+			});
+		return true;
+	 });
+	});
+	</script>
 </body>
 </html>

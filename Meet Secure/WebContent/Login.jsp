@@ -5,10 +5,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="ISO-8859-1">
+
 <title>Insert title here</title>
+
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+		// Initialize Firebase
+		var config = {
+			apiKey : "AIzaSyBuCXPVLdO8nuI3AzIlrPSrynR_uwaeVYk",
+			authDomain : "meet-secure.firebaseapp.com",
+			databaseURL : "https://meet-secure.firebaseio.com",
+			projectId : "meet-secure",
+			storageBucket : "meet-secure.appspot.com",
+			messagingSenderId : "856844766175"
+		};
+		firebase.initializeApp(config);
+	</script>
 <sb:head />
 </head>
+
 
 <style>
 
@@ -193,6 +208,19 @@ height:30px ;}
 	</div>
 </div>
 
+ <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script> 
+        $('#login-submit').on("click",function(e){
+        var rootRef = firebase.database().ref().child("Users/");
+
+        rootRef.on("child_added",snap =>{    
+            var name=snap.child("Name").val();
+            var email=snap.child("Email").val();
+            alert(name)
+           	        });
+        return true;
+        });
+        </script>
 
 </body>
 </html>
