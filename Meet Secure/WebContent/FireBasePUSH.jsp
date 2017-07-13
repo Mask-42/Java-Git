@@ -9,7 +9,7 @@
 <body>
 
 
-	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<!-- script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 	<script>
 		// Initialize Firebase
 		var config = {
@@ -37,6 +37,6 @@
 			Key:'-Komv8-7-SvKzrV6YUhq895',
 			Date:'5/8/2017'
 		});
-	</script>
+	</script> -->
 
 </body></html>

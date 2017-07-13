@@ -278,24 +278,8 @@ label {
 <script src="js/bootstrap.min.js">
 	
 </script>
-<script type="text/javascript">
-	var name,address,phone,email,username,password,role;
-	
-	  function auth()
-	 {
-		 
-		
-		// pattern=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,16}$/;
-		 name=document.getElementByName("name");
-		 email=document.getElementByName("email");
-		 password=document.getElementByName("password");
-		 address=document.getElementByName("address");
-		username=document.getElementByName("username");
-		 role=document.getElementByName("role");
-		 phone=document.getElementByName("phone");
-	 }
-	  </script>
-	 
+
+
 <body>
 	<div class="container-fluid">
 		<div class="row">
@@ -372,42 +356,42 @@ label {
 									</h1>
 									</center>
 									<s:form action="adduser" id="login-form" method="post"
-										theme="bootstrap" cssClass="form-search" onsubmit="return auth()">
+										theme="bootstrap" cssClass="form-search" >
 <center>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-user"></span>
 											<s:textfield type="text"  name="name" placeholder="Name"
-												class="form-control" value="">
+												class="form-control"  id="name" value="">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-phone"></span>
 											<s:textfield type="text"  name="phone" value=""
-												class="form-control" placeholder="Contact No.">
+												class="form-control"  id="phone" placeholder="Contact No.">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-home"></span>
 											<s:textfield type="text"  name="address" value=""
-												class="form-control" placeholder="Address">
+												class="form-control" id="address" placeholder="Address">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-envelope"></span>
-											<s:textfield type="email" name="email" value=""
+											<s:textfield type="email" name="email" id="email" value=""
 												class="form-control" placeholder="E-mail Id">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-list-alt"></span>
 											<s:textfield type="text" name="username" value=""
-												class="form-control" placeholder="Username">
+												class="form-control" placeholder="Username" id="username">
 											</s:textfield>
 										</div>
 										<div class="form-group form-inline">
 											<span class="glyphicon glyphicon-lock"></span> 
 											<s:password type="password"  name="password" value=""
-												class="form-control" placeholder="Password">
+												class="form-control" placeholder="Password" id="password">
 											</s:password>
 										</div>
 										<div class="form-group form-inline">
@@ -464,21 +448,34 @@ label {
 	</script>
 	
 	
+	
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 	<script type="text/javascript">
-		var userRef = firebase.database().ref().child("Users/");
-		alert(userRef);
+	
+	 $('#add-request').on('click',function(){
+		 
+		/*var name=document.getElementById("name");
+		 var email=document.getElementById("email");
+		  var password=document.getElementById("password");
+		 var address=document.getElementById("address");
+		var username=document.getElementById("username");
+		 var phone=document.getElementById("phone");*/
+		 
+		 var userRef = firebase.database().ref().child("Users/");
+	
+			 
+		
+		
 		userRef.push({
-			Name : 'Rohit Manhas',
-			Address:'Pathankot',
-			Contact:'7002354869',
-			Email:'manhas_rohit@gmail.com',
-			Purpose:'Taking Money',
-			ManagerName:'Manpreet Shuann',
-			Time:'13:15',
-			Key:'-Komv8-7-SvKzrV6YUhq895',
-			Date:'5/8/2017'
+		Name: document.getElementById("name"),
+		Email: document.getElementById("email")		
+		
+		});
+		}
+		
 		});
 	</script>
+
+	
 	</body>
 </html>
