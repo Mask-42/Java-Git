@@ -164,8 +164,8 @@ height:30px ;}
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<s:form action="home" theme="bootstrap"  cssClass="form-search">
-								<h2>
+						 	<!--s:form action="" theme="bootstrap"  cssClass="form-search"-->
+								<div theme="bootstrap"  cssClass="form-search">								<h2>
 									<center>
 										<b> <span class="glyphicon glyphicon-log-in"></span> LOGIN
 										</b>
@@ -176,7 +176,8 @@ height:30px ;}
 								<div class="form-group form-inline">
 									<span class=" glyphicon glyphicon-user">  </span> 
 									<s:textfield
-										name="username" id="username" tabindex="1" placeholder="Username" value=""/>
+										name="username" id="username" tabindex="1" placeholder="Username" value=""
+										theme="bootstrap"  cssClass="form-search"/>
 								</div>	
 								<div class="form-group form-inline">
 									<span class="glyphicon glyphicon-lock">  </span> <s:textfield
@@ -195,7 +196,9 @@ height:30px ;}
 										tabindex="4" class="form-control btn btn-success"
 										value="LogIn"/>
 								</div>
-							</s:form>
+								</div>
+								
+							<!-- /s:form-->
 							
 
 						</div>
@@ -208,22 +211,59 @@ height:30px ;}
 	</div>
 </div>
 
- <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-        <script type="text/javascript"> 
-        $('#login-submit').on("click",function(e){
+
+
+  <table>
+            <thead>
+                <tr>
+                  <td>Role</td>
+                    <td>Password</td>
+                   
+                    
+                </tr>
+            </thead>      
+            <tbody id="My_Table">
+</tbody>
+</table>
+
+         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script> 
         var rootRef = firebase.database().ref().child("Users/");
-        var userName=$('#username').val();
-        var passWord=$('#password').val();
-        alert(userName);
-    rootRef.orderByChild('Username').equalTo(userName).on('child_added',function(snapshot){
-    	 
-     var password=snapshot.child("Password").val();
-     var role=snapshot.child("Role").val();
-     if(password.equals(passWord) && role.equals("Manager"))
-     alert(password)
-      });
-    return true;
-        });
+       	 $('#login-submit').on("click", function(e) {
+       	//	e.preventDefault();
+       		 var uname=$('#username').val();
+       		 var pass=$('#password').val();
+       		rootRef.orderByChild('Username').equalTo(uname).once('value', function (snap) {
+       		var exist=snap.val();
+       		
+       		
+       		 
+       		if(exist){ 
+			rootRef.orderByChild('Username').equalTo(uname).on('child_added', function (snapshot) {
+        	var user=snapshot.child("Username").val();
+            var password=snapshot.child("Password").val();
+            var role=snapshot.child("Role").val();
+                    if (password == pass) {
+        	 var x=	new  XMLHttpRequest();
+            	var url="./ActionClass?id="+role;
+            	//x.open("GET",url,true);
+            	//x.send(null);
+            	window.location.href=url;
+		}
+          else{
+        	  alert("Wrong Username or Password");
+          } 
+        });}
+			else{
+				
+				alert("Username does not exist");
+			}
+                return true;
+              
+       		
+       		});
+       	 });
+     
         </script>
 
 </body>

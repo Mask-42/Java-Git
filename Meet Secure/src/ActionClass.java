@@ -1,62 +1,33 @@
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
-//public class LoginAction implements Action{
-public class ActionClass extends ActionSupport {// extend action support to send
-												/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	// error
-	String name, pass;
+//public class ActionClass extends ActionSupport {// extend action support to send
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getPass() {
-		return pass;
-	}
-
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
+public class ActionClass implements Action{
 
 	@Override
 	public String execute() throws Exception {
-
-		/*if (validateString(getName()) && validateString(getPass())) {
-			if (getName().equals("Manu") && getPass().equals("Manu1234")) {
-				return "SUCCESS";
-			}
-
-			else {
-				addActionError(getText("errors.name.empty"));
-				addActionError(getText("errors.pass.empty"));
-				return "ERROR";
-			}
+		
+		HttpServletRequest request=ServletActionContext.getRequest();
+		System.out.println("string"+request.getParameter("id"));
+		String string=request.getParameter("id");
+		
+		if(string!=null &&string.equals("Manager"))
+		{
+			return "manager";
 		}
-
-		else {
-			addActionError(getText("errors.name.empty"));
-			addActionError(getText("errors.pass.empty"));
-			return "ERROR";
-		}*/
-		return "SUCCESS";
-
+		else if(string!=null &&string.equals("Admin"))
+		{
+			return "admin";
+		}
+		return "admin";
 	}
 
-/*	private boolean validateString(String str) {
+												
 
-		if (str != null && !str.equals(""))
-
-			return true;
-
-		return false;
-	}*/
 
 }

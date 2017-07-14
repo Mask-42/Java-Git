@@ -42,14 +42,17 @@
         
         var rootRef = firebase.database().ref().child("Users/");
         rootRef.orderByChild('Role').equalTo("Manager").on('child_added', function (snapshot) {
-
         		
             var name=snapshot.child("Name").val();
             var email=snapshot.child("Email").val();
             var contacts=snapshot.child("Contact").val();
-        	
-        
             $("#My_Table").append("<tr> <td>"+ name + " </td> <td> "+ email +"  </td> <td> "+ contacts +" </td> </tr>");
+        	var x=	new  XMLHttpRequest();
+        	var url="./Act?id="+name;
+        	x.open("GET",url,true);
+        	x.send(null);
+        
+           // 
         });
         </script>
     </body>

@@ -27,5 +27,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/core-3.1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javase-3.1.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/firebase-admin-5.2.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

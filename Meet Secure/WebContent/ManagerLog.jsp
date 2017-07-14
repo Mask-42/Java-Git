@@ -126,7 +126,7 @@ body{
         <script type="text/javascript"> 
         
         var rootRef = firebase.database().ref().child("Log/");
-        rootRef.orderByChild('ManagerName').equalTo("Manpreet Shuann").on('child_added', function (snapshot) {
+        rootRef.orderByChild('ManagerName').on('child_added', function (snapshot) {
 
         		
             var name=snapshot.child("Name").val();
@@ -139,7 +139,7 @@ body{
         	var Purpose =snapshot.child("Purpose").val();
         	var stts=snapshot.child("Status").val();
         	var time=snapshot.child("Time").val();
-            $("#My_Table").append("<tr> <td>"+ name + " </td> <td> "+ email +"  </td> <td> "+ contacts +"  </td> <td> "+address+" </td> <td> "+Purpose+" </td> <td> "+date+" </td> <td> "+managerName+" </td> <td> "+time+" </td> <td> "+meetingOver +" </td> <td> "+stts + "</td> </tr>");
+            $("#My_Table").append("<tr> <td>"+ name + " </td> <td> "+ email +"  </td> <td> "+ contacts +"  </td> <td> "+address+" </td> <td> "+Purpose+" </td> <td> "+date+" </td> <td> "+managerName+" </td> <td> "+time+" </td> <td> "+meetingover +" </td> <td> "+stts + "</td> </tr>");
         });
         </script>
     </body>

@@ -5,6 +5,7 @@
 
 
 		<struts>
+		<constant name="struts.action.excludePattern" value="/Actt"></constant>
 		<constant name="struts.action.excludePattern" value="/QrCodeServlet"></constant>
 <constant name="struts.custom.i18n.resources" value="resources.ApplicationResources"></constant>
     <package name="default"  extends="struts-default">
@@ -13,12 +14,17 @@
             <result>/Index.jsp</result>
 
         </action>
+          <action name="Act" class="Act">
 
-        <action name="home" class="ActionClass">
+            <result>/Login.jsp</result>
 
-            <result name="SUCCESS">/Login.jsp</result>
+        </action>
 
-            <result name="ERROR">/Error.jsp</result>
+        <action name="ActionClass" class="ActionClass">
+
+            <result name="manager">/ManagerOrg.jsp</result>
+
+            <result name="admin">/AdminPage.jsp</result>
 
         </action>
         
