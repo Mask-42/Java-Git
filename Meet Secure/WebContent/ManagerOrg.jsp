@@ -124,9 +124,9 @@ height:30px ;}
               <ul class="nav navbar-nav navbar-center  navbar-border"   >
          
                 <li ><a href="ManagerLog.jsp"><p>Logs</p></a></li>
-               <li ><a href=""><p>Appointments</p></a></li>
+               <li ><a href="ManagerApp.jsp"><p>Appointments</p></a></li>
             
-                <li><a href="">Logout</a></li>
+                <li><a href="index.jsp">Logout</a></li>
                
               </ul>
             </div>

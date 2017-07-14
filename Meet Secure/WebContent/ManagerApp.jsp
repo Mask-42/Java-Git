@@ -89,7 +89,7 @@ body{
 					</button>
 <div style="padding-top: 30px;" class="row">	
 		<div class="col-md-8 col-xs-offset-1">
-		<h2> <center> Logs of meetings </center></h2>
+		<h2> <center> Appointments</center></h2>
 		<br>
 		<div class="table-responsive">
         <table class="table table-striped ">
@@ -103,10 +103,9 @@ body{
                        <th>Address</th>
                           <th>Purpose</th>
                                <th>Date</th>
-                                    <th>Manager-Name</th>
-                                         <th>Meeting Time</th>
-                                              <th>Meeting Over</th>
-                                                   <th>Status</th>
+                              <th>Time</th>
+                                              
+                                                  
                        
                          
                     
@@ -125,7 +124,7 @@ body{
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script type="text/javascript"> 
         
-        var rootRef = firebase.database().ref().child("Log/");
+        var rootRef = firebase.database().ref().child("ConfirmAppointments/");
         rootRef.orderByChild('ManagerName').on('child_added', function (snapshot) {
 
         		
@@ -134,12 +133,11 @@ body{
             var contacts=snapshot.child("Contact").val();
             var address=snapshot.child("Address").val();
         	var date=snapshot.child("Date").val();
-        	var managerName=snapshot.child("ManagerName").val();
-        	var meetingover=snapshot.child("Meeting Over At").val();
+        	
         	var Purpose =snapshot.child("Purpose").val();
-        	var stts=snapshot.child("Status").val();
+        	
         	var time=snapshot.child("Time").val();
-            $("#My_Table").append("<tr> <td>"+ name + " </td> <td> "+ email +"  </td> <td> "+ contacts +"  </td> <td> "+address+" </td> <td> "+Purpose+" </td> <td> "+date+" </td> <td> "+managerName+" </td> <td> "+time+" </td> <td> "+meetingover +" </td> <td> "+stts + "</td> </tr>");
+            $("#My_Table").append("<tr> <td>"+ name + " </td> <td> "+ email +"  </td> <td> "+ contacts +"  </td> <td> "+address+" </td> <td> "+ Purpose+"</td><td>"+date+"</td><td>"+time+"</td> </tr>");
         });
         </script>
     </body>
