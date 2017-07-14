@@ -247,6 +247,14 @@ height:30px ;}
 	<br>
 	
 		<script>
+		
+        var rootRef = firebase.database().ref().child("Users/");
+        
+        rootRef.orderByChild('Role').equalTo("Manager").on('child_added', function (snapshot) {
+        	var name=snapshot.child("Name").val();
+        
+        });      
+       		
 	var userRef = firebase.database().ref().child("PendingAppointments/");
 	$(document).ready(function(){
 	 $('#login-request').on("click",function(e){
@@ -256,13 +264,15 @@ height:30px ;}
 		 var phone=$('#phone').val();
 		 var purpose=$('#purpose').val();
 		 var manager=$('#category1').val();
+		 var man_phn=manager+"_"+phone;
 		userRef.push({
 			"Name":name,
 			"Email":email,
 			"Address": address,
 			"Contact":phone,
 			"Purpose": purpose,
-			"Manager": manager
+			"ManagerName": manager,
+			"ManagerName_Contact":man_phn
 			});
 		return true;
 	 });
