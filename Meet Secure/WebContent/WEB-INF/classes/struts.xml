@@ -25,7 +25,7 @@
             <result name="manager">/ManagerOrg.jsp</result>
 
             <result name="admin">/AdminPage.jsp</result>
-
+<result name="security">/Guard.jsp</result>
         </action>
         
    <action name="getApp" class="getApp">

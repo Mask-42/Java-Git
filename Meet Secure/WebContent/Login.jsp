@@ -213,18 +213,7 @@ height:30px ;}
 
 
 
-  <table>
-            <thead>
-                <tr>
-                  <td>Role</td>
-                    <td>Password</td>
-                   
-                    
-                </tr>
-            </thead>      
-            <tbody id="My_Table">
-</tbody>
-</table>
+
 
          <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script> 

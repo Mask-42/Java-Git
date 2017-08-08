@@ -24,6 +24,10 @@ public class ActionClass implements Action{
 		{
 			return "admin";
 		}
+		else if(string!=null &&string.equals("Security"))
+		{
+			return "security";
+		}
 		return "admin";
 	}
 
