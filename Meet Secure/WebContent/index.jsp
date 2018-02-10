@@ -17,12 +17,6 @@
 <link href="css/animations.css" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet">
 <link href="color/default.css" rel="stylesheet">
-<!-- =======================================================
-        Theme Name: SAM
-        Theme URL: https://bootstrapmade.com/SAM-bootstrap-template-nice-animation/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
 
 </head>
 
@@ -35,8 +29,8 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center inner">
         <div class="animatedParent">
-          <h1 class="animated fadeInDown">MUSIM SAM</h1>
-          <p class="animated fadeInUp">Udah dari dulu tahu kalo SAM kenapa nggak ditambal tong</p>
+          <h1 class="animated fadeInDown">Meet Secure</h1>
+          <p class="animated fadeInUp">A facility securer and appointment maker</p>
         </div>
       </div>
       <p></p>
@@ -53,7 +47,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2">
-          <div class="site-logo"> <a href="index.html" class="brand">SAM</a> </div>
+          <div class="site-logo"> <a href="index.html" class="brand"  >MEET SECURE</a> </div>
         </div>
         <div class="col-md-10"> 
           
@@ -91,7 +85,7 @@
       <div class="col-lg-8 col-lg-offset-2">
         <div class="animatedParent">
           <div class="section-heading text-center animated bounceInDown">
-            <h2 class="h-bold">About our SAM team</h2>
+            <h2 class="h-bold">About Meet Secure</h2>
             <div class="divider-header"></div>
           </div>
         </div>
@@ -102,8 +96,8 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 animatedParent">
         <div class="text-center">
-          <p > Lorem ipsum dolor sit amet, vis tale malis tacimates et, graece doctus omnesque ne est, deserunt pertinacia ne nam. Pro eu simul affert referrentur, natum mutat erroribus te his </p>
-          <p> Ne mundi fabulas corrumpit vim, nulla vivendum conceptam eu nam. Ius ex principes complectitur, ex quo duis suscipit. Ius fastidii reprimique no. Sadipscing appellantur pri ad. Oratio moderatius definitiones cum ex, mea ne brute vivendum percipitur. </p>
+          <p > A facility securing app  and web client to secure the meetings and appointments of the facility to secure the privacy of the facility and to make a check on the intruders its consists of Android App development and Java EE. </p>
+          <p> The basic framework used is Struts 2.5. The database used is no query base data base that is Firebase by google. It consists a part to create an appointment with an officer and also consists a security guard app to check the QR Code provided by the web server.</p>
           <a href="#service" class="btn btn-skin btn-scroll">What we do</a> </div>
       </div>
     </div>
@@ -136,7 +130,7 @@
               <div class="service-desc">
                 <h5>List of Manager</h5>
                 <div class="divider-header"></div>
-                <p style="color:#FFF;"> Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo. </p>
+                <p style="color:#FFF;"> This shows you the list of all the managers in the facility. </p>
               <a href="ListOfManagers.jsp" class="btn btn-skin">Learn more</a> </div>
             </div>
           </div>
@@ -148,7 +142,7 @@
               <div class="service-desc">
                 <h5>Get an Appointment</h5>
                 <div class="divider-header"></div>
-                <p style="color:#FFF;"> Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo. </p>
+                <p style="color:#FFF;">Want an appointment with one of our managers? You are just one click away! </p>
                 <a href="getApp.jsp" class="btn btn-skin">Get Appointment</a> </div>
             </div>
           </div>
@@ -160,7 +154,7 @@
               <div class="service-desc">
                 <h5>need Help</h5>
                 <div class="divider-header"></div>
-                <p style="color:#FFF;"> Ad denique euripidis signiferumque vim, iusto admodum quo cu. No tritani neglegentur mediocritatem duo. </p>
+                <p style="color:#FFF;"> Don't know what to do? Need help with something? We are always here!  </p>
                 <a href="#" class="btn btn-skin">Learn more</a> </div>
             </div>
           </div>
@@ -284,18 +278,13 @@
       <div class="col-md-6">
         <ul class="footer-menu">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Press release</a></li>
+          
         </ul>
       </div>
       <div class="col-md-6 text-right copyright"> &copy;Copyright - SAM. All Rights Reserved
         <div class="credits"> 
-          <!-- 
-                            All the links in the footer should remain intact. 
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=SAM
-                        --> 
-          <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a> </div>
+         
+          <a href="#">Meet Secure </a>  by <a href="#">Team SAM</a> </div>
       </div>
     </div>
   </div>
