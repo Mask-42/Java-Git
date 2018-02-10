@@ -30,7 +30,7 @@
       <div class="col-md-8 col-md-offset-2 text-center inner">
         <div class="animatedParent">
           <h1 class="animated fadeInDown">Meet Secure</h1>
-          <p class="animated fadeInUp">A facility securer and appointment maker</p>
+          <p class="animated fadeInUp">Our goals are simple : Safety and Security. </p>
         </div>
       </div>
       <p></p>
